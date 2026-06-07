@@ -238,8 +238,8 @@ const Members = () => {
                         </span>
                       ))}
                     </div>
-                    <p className="text-sm font-semibold mt-3" style={{ color: 'rgb(255, 255, 255)' }}>IDENTITY:</p>
-                    <p className="text-lg font-bold" style={{ color: 'var(--color-accent-gold)' }}>{member.identity}</p>
+                    <p className="text-sm font-semibold mt-3" style={{ color: 'rgb(255, 255, 255)' }}>Gender:</p>
+                    <p className="text-lg font-bold" style={{ color: 'var(--color-accent-gold)' }}>{member.gender}</p>
                   </div>
                 </div>
 

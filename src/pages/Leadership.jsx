@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Crown, Shield, Sword, MapPin, Award, Volume2, VolumeX, Play } from 'lucide-react';
+import { p } from 'framer-motion/client';
 
 const Leadership = () => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -66,7 +67,7 @@ const Leadership = () => {
       countryCode: 'US',
       role: 'Leader',
       gameRangerId: '611000',
-      identity: 'Male',
+      gender: 'Male',
       specialties: ["AOK DOTA",'Blood Maps', 'Tower Defence', 'Vampire Recursion'],
       description: 'Founder of FooW Clan and one of the original veterans of Age of Kings clan warfare.',
       icon: Crown,
@@ -78,7 +79,7 @@ const Leadership = () => {
       countryCode: 'US',
       role: 'Sub Leader',
       gameRangerId: '397841',
-      identity: 'Male',
+      gender: 'Male',
       specialties: ['CBA Heroes Turbo', 'Blood Maps', 'Vampire Recursion', 'Tower Defence'],
       description: 'Legendary map designer known for creating multiple versions of Vampire Recursion and several famous custom maps.',
       icon: Shield,
@@ -90,7 +91,7 @@ const Leadership = () => {
       countryCode: 'RU',
       role: 'Commander',
       gameRangerId: '7991917',
-      identity: 'Female',
+      gender: 'Female',
       specialties: ['CBA v21', 'RPG', 'Tower Defence' , "AOK DOTA"],
       description: 'Strategic commander and active competitive player.',
       icon: Sword,
@@ -101,6 +102,7 @@ const Leadership = () => {
   const getBadgeColor = (badge) => {
     switch (badge) {
       case 'founder': return 'from-yellow-400 via-yellow-500 to-yellow-600';
+      
       case 'subleader': return 'from-blue-400 via-blue-500 to-blue-600';
       case 'commander': return 'from-purple-400 via-purple-500 to-purple-600';
       default: return 'from-gray-400 via-gray-500 to-gray-600';
@@ -210,9 +212,9 @@ const Leadership = () => {
             </div>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold mb-2 text-center" style={{ color: 'var(--color-accent-gold)' }}>Identity:</h4>
+              <h4 className="text-sm font-semibold mb-2 text-center" style={{ color: 'var(--color-accent-gold)' }}>Gender:</h4>
               <p className="text-sm font-bold text-center" style={{ color: 'white' }}>
-                {leader.identity}
+                {leader.gender}
               </p>
             </div>
 
