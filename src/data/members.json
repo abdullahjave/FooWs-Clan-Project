@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "displayOrder": 4,
+    "displayOrder": 5,
     "name": ">FooW<_NØ_ØNE™",
     "country": "Pakistan",
     "countryCode": "PK",
@@ -51,9 +51,24 @@
     "status": "Active",
     "gender": "Male"
   },
-  {
+{
+  
     "id": 5,
-    "displayOrder": 5,
+    "displayOrder": 4,
+    "name": ">FooW<_455™",
+    "country": "USA",
+    "countryCode": "US",
+    "gameRangerId": "455739",
+    "role": "General",
+    "badge": "general.png",
+    "specialties": ["RPGs Map"],
+    "status": "Active",
+    "gender": "Male"
+  },
+
+  {
+    "id": 6,
+    "displayOrder": 6,
     "name": ">FooW<_Banks",
     "country": "Sweden",
     "countryCode": "SE",
@@ -65,8 +80,8 @@
     "gender": "Male"
   },
   {
-    "id": 6,
-    "displayOrder": 6,
+    "id": 7,
+    "displayOrder": 7,
     "name": ">FooW<Prohunter",
     "country": "Pakistan",
     "countryCode": "PK",
@@ -78,8 +93,8 @@
     "gender": "Male"
   },
   {
-    "id": 9,
-    "displayOrder": 7,
+    "id": 8,
+    "displayOrder": 8,
     "name": ">FooW<_MArvo",
     "country": "Brazil",
     "countryCode": "BR",
@@ -91,8 +106,8 @@
     "gender": "Male"
   },
   {
-    "id": 10,
-    "displayOrder": 8,
+    "id": 9,
+    "displayOrder": 9,
     "name": ">FooW<_akira Kurosawa",
     "country": "Argentina",
     "countryCode": "AR",
@@ -104,8 +119,8 @@
     "gender": "Male"
   },
   {
-    "id": 11,
-    "displayOrder": 9,
+    "id": 10,
+    "displayOrder": 10,
     "name": ">FooW<_ElvisChocho",
     "country": "Mexico",
     "countryCode": "MX",
@@ -117,8 +132,8 @@
     "gender": "Female"
   },
   {
-    "id": 7,
-    "displayOrder": 10,
+    "id": 11,
+    "displayOrder": 11,
     "name": ">FooW<_KING™",
     "country": "Spain",
     "countryCode": "ES",
@@ -130,8 +145,8 @@
     "gender": "Male"
   },
   {
-    "id": 8,
-    "displayOrder": 11,
+    "id": 12,
+    "displayOrder": 12,
     "name": ">FooW<_NL Pattadinh",
     "country": "Finland",
     "countryCode": "FI",
