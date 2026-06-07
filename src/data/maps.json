@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Vampire Recursion Series",
+    "versions": "1-10",
+    "creator": ">FooW<_Diblo™",
+    "difficulty": "Expert",
+    "popularity": "Legendary",
+    "description": "The legendary vampire survival series that became a FooW signature map.",
+    "image": "/Vampire.png"
+  },
+  {
+    "id": 2,
+    "name": "Blood Maps",
+    "versions": "Multiple",
+    "creator": "FooW Community",
+    "difficulty": "Hard",
+    "popularity": "High",
+    "description": "Intense combat maps featuring fast-paced battles and strategic warfare.",
+    "image": "/Bloods-map.png"
+  },
+  {
+    "id": 3,
+    "name": "Tower Defence",
+    "versions": "Various",
+    "creator": "FooW Community",
+    "difficulty": "Medium",
+    "popularity": "Very High",
+    "description": "Classic defense scenarios requiring teamwork and strategic positioning.",
+    "image": "/TD.png"
+  },
+  {
+    "id": 4,
+    "name": "RPG Kingdoms",
+    "versions": "Multiple",
+    "creator": "FooW Community",
+    "difficulty": "Medium",
+    "popularity": "High",
+    "description": "Role-playing adventures with quests, heroes, and kingdom building."
+  },
+  {
+    "id": 5,
+    "name": "CBA Heroes Turbo",
+    "versions": "Enhanced",
+    "creator": ">FooW<_Diblo™",
+    "difficulty": "Expert",
+    "popularity": "Very High",
+    "description": "Fast-paced castle blood arena with enhanced heroes and abilities.",
+    "image": "/turbo.png"
+  }
+]

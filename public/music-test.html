@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Test</title>
+</head>
+<body>
+    <h1>Theme Music Test</h1>
+    <button id="playBtn">Play Music</button>
+    <button id="pauseBtn">Pause Music</button>
+    <div id="status">Status: Not loaded</div>
+    
+    <script>
+        const audio = new Audio('/theme-music.mp3');
+        audio.loop = true;
+        audio.volume = 0.3;
+        
+        const status = document.getElementById('status');
+        
+        audio.addEventListener('loadeddata', () => {
+            status.textContent = 'Status: Music loaded successfully!';
+            console.log('Music file loaded:', audio.duration, 'seconds');
+        });
+        
+        audio.addEventListener('error', (e) => {
+            status.textContent = 'Status: Error loading music!';
+            console.error('Audio error:', e);
+        });
+        
+        document.getElementById('playBtn').addEventListener('click', async () => {
+            try {
+                await audio.play();
+                status.textContent = 'Status: Playing';
+                console.log('Music playing');
+            } catch (error) {
+                status.textContent = 'Status: Error playing - ' + error.message;
+                console.error('Play error:', error);
+            }
+        });
+        
+        document.getElementById('pauseBtn').addEventListener('click', () => {
+            audio.pause();
+            status.textContent = 'Status: Paused';
+            console.log('Music paused');
+        });
+    </script>
+</body>
+</html>

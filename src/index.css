@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-primary-900: #0a1628;
+  --color-primary-800: #0f1f3a;
+  --color-primary-700: #1a2942;
+  --color-primary-600: #253654;
+  --color-accent-blue: #4a9eff;
+  --color-accent-silver: #c0c7d4;
+  --color-accent-gold: #d4af37;
+}
+
+@layer base {
+  body {
+    background: linear-gradient(to bottom right, var(--color-primary-900), var(--color-primary-800), var(--color-primary-900));
+    color: var(--color-accent-silver);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px rgba(74, 158, 255, 0.3);
+  }
+  
+  .btn-primary {
+    background-color: var(--color-accent-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(74, 158, 255, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(74, 158, 255, 0.5);
+  }
+  
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+}
