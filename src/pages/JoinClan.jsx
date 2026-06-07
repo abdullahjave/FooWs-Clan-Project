@@ -32,7 +32,6 @@ const JoinClan = () => {
         country: '',
         gameRangerId: '',
         favoriteMaps: '',
-        experienceLevel: '',
         message: '',
       });
     }, 3000);
@@ -199,26 +198,6 @@ const JoinClan = () => {
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-accent-silver focus:outline-none focus:border-accent-blue transition-colors"
                     placeholder="e.g., CBA v21, Vampire Recursion"
                   />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-accent-silver/80 mb-2">
-                    <TrendingUp className="inline-block w-4 h-4 mr-2" />
-                    Experience Level *
-                  </label>
-                  <select
-                    name="experienceLevel"
-                    value={formData.experienceLevel}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-accent-silver focus:outline-none focus:border-accent-blue transition-colors"
-                  >
-                    <option value="" className="bg-primary-800">Select experience level</option>
-                    <option value="beginner" className="bg-primary-800">Beginner</option>
-                    <option value="intermediate" className="bg-primary-800">Intermediate</option>
-                    <option value="advanced" className="bg-primary-800">Advanced</option>
-                    <option value="expert" className="bg-primary-800">Expert</option>
-                  </select>
                 </div>
 
                 <div>
