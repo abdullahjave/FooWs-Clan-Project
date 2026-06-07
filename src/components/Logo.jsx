@@ -5,10 +5,10 @@ const Logo = ({ size = 'md', showText = true, className = '' }) => {
   const [imageError, setImageError] = useState(false);
   
   const sizes = {
-    sm: 'h-10 w-10',
-    md: 'h-16 w-16',
-    lg: 'h-20 w-20',
-    xl: 'h-28 w-28',
+    sm: 'h-15 w-15',
+    md: 'h-20 w-20',
+    lg: 'h-25 w-25',
+    xl: 'h-30 w-30',
   };
 
   const handleImageError = () => {

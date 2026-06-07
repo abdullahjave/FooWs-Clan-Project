@@ -66,7 +66,8 @@ const Leadership = () => {
       countryCode: 'US',
       role: 'Leader',
       gameRangerId: '611000',
-      specialties: ['Blood Maps', 'Tower Defence', 'Vampire Recursion'],
+      identity: 'Male',
+      specialties: ["AOK DOTA",'Blood Maps', 'Tower Defence', 'Vampire Recursion'],
       description: 'Founder of FooW Clan and one of the original veterans of Age of Kings clan warfare.',
       icon: Crown,
       badge: 'founder',
@@ -77,6 +78,7 @@ const Leadership = () => {
       countryCode: 'US',
       role: 'Sub Leader',
       gameRangerId: '397841',
+      identity: 'Male',
       specialties: ['CBA Heroes Turbo', 'Blood Maps', 'Vampire Recursion', 'Tower Defence'],
       description: 'Legendary map designer known for creating multiple versions of Vampire Recursion and several famous custom maps.',
       icon: Shield,
@@ -88,7 +90,8 @@ const Leadership = () => {
       countryCode: 'RU',
       role: 'Commander',
       gameRangerId: '7991917',
-      specialties: ['CBA v21', 'RPG', 'Tower Defence'],
+      identity: 'Female',
+      specialties: ['CBA v21', 'RPG', 'Tower Defence' , "AOK DOTA"],
       description: 'Strategic commander and active competitive player.',
       icon: Sword,
       badge: 'commander',
@@ -204,6 +207,13 @@ const Leadership = () => {
                 <Award className="w-5 h-5" style={{ color: 'var(--color-accent-gold)' }} />
                 <span style={{ color: 'white' }}>GameRanger ID: {leader.gameRangerId}</span>
               </div>
+            </div>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold mb-2 text-center" style={{ color: 'var(--color-accent-gold)' }}>Identity:</h4>
+              <p className="text-sm font-bold text-center" style={{ color: 'white' }}>
+                {leader.identity}
+              </p>
             </div>
 
             <div className="mb-4">

@@ -83,7 +83,7 @@ const Members = () => {
     switch (role) {
       case 'Leader': return '#FFD700';
       case 'Sub Leader': return '#4A9EFF';
-      case 'Commander': return '#A855F7';
+      case 'Commander': return '#f75555';
       case 'Elite Member': return '#10B981';
       case 'Veteran': return '#F97316';
       default: return '#C0C7D4';
@@ -161,7 +161,7 @@ const Members = () => {
       >
         <div className="grid md:grid-cols-2 gap-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: 'rgba(255, 255, 255, 0.5)' }} />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: 'rgb(255, 255, 255)' }} />
             <input
               type="text"
               placeholder="Search members..."
@@ -173,7 +173,7 @@ const Members = () => {
           </div>
 
           <div className="relative">
-            <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: 'rgba(255, 255, 255, 0.5)' }} />
+            <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: 'rgb(255, 255, 255)' }} />
             <select
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
@@ -207,37 +207,39 @@ const Members = () => {
                 {/* Left Section - Member Info */}
                 <div className="flex-1 min-w-0">
                   <div className="mb-3">
-                    <p className="text-sm font-semibold mb-1" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>NAME:</p>
+                    <p className="text-sm font-semibold mb-1" style={{ color: 'rgba(255, 255, 255, 0.99)' }}>NAME:</p>
                     <h3 className="text-2xl font-bold" style={{ fontFamily: 'Cinzel, serif', color: 'var(--color-accent-gold)' }}>
                       {member.name}
                     </h3>
                   </div>
 
                   <div className="mb-3">
-                    <p className="text-sm font-semibold mb-1" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>GAME RANGER ID:</p>
+                    <p className="text-sm font-semibold mb-1" style={{ color: 'rgba(255, 255, 255, 0.99)' }}>GAME RANGER ID:</p>
                     <p className="text-xl font-bold" style={{ color: 'var(--color-accent-gold)' }}>{member.gameRangerId}</p>
                   </div>
 
                   <div className="mb-3">
-                    <p className="text-sm font-semibold mb-1" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>MEMBERS:</p>
+                    <p className="text-sm font-semibold mb-1" style={{ color: 'rgb(255, 255, 255)' }}>MEMBERS:</p>
                     <p className="text-xl font-bold" style={{ color: roleColor }}>
                       {getRoleLabel(member.role)}
                     </p>
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold mb-2" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>SPECIALTIES:</p>
+                    <p className="text-sm font-semibold mb-2" style={{ color: 'rgb(255, 255, 255)' }}>SPECIALTIES:</p>
                     <div className="flex flex-wrap gap-2">
                       {member.specialties.map((specialty, idx) => (
                         <span
                           key={idx}
                           className="text-sm px-3 py-1 rounded border border-white/20 font-medium"
-                          style={{ backgroundColor: 'rgba(74, 158, 255, 0.2)', color: 'white' }}
+                          style={{ backgroundColor: 'rgba(74, 158, 255, 0.2)', color: "rgb(241, 239, 228)" }}
                         >
-                          {specialty}
+                          {specialty}s
                         </span>
                       ))}
                     </div>
+                    <p className="text-sm font-semibold mt-3" style={{ color: 'rgb(255, 255, 255)' }}>IDENTITY:</p>
+                    <p className="text-lg font-bold" style={{ color: 'var(--color-accent-gold)' }}>{member.identity}</p>
                   </div>
                 </div>
 
@@ -246,13 +248,13 @@ const Members = () => {
                   <img
                     src={badgeImage}
                     alt={`${member.role} badge`}
-                    className="w-33 h-33 object-contain drop-shadow-2xl"
+                    className="w-36 h-36 object-contain drop-shadow-2xl"
                   />
                 </div>
 
                 {/* Right Section - Country Flag */}
-                <div className="text-right flex-shrink-0">
-                  <p className="text-sm font-semibold mb-3" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>FROM:</p>
+                <div className="text-center flex-shrink-0">
+                  <p className="text-sm font-semibold mb-3" style={{ color: 'rgb(255, 255, 255)' }}>FROM:</p>
                   <img
                     src={`https://flagcdn.com/w320/${member.countryCode.toLowerCase()}.png`}
                     alt={member.country}
@@ -272,7 +274,7 @@ const Members = () => {
           animate={{ opacity: 1 }}
           className="text-center py-12"
         >
-          <p className="text-lg" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>No members found matching your criteria.</p>
+          <p className="text-lg" style={{ color: 'rgb(255, 255, 255)' }}>No members found matching your criteria.</p>
         </motion.div>
       )}
     </div>

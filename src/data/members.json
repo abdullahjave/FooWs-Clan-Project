@@ -9,7 +9,8 @@
     "role": "Leader",
     "badge": "badge-leader.svg",
     "specialties": ["Blood Maps", "Tower Defence", "AOC DOTA", "Vampire Recursion"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "role": "Sub Leader",
     "badge": "badge-subleader.png",
     "specialties": ["CBA Heroes Turbo", "Blood Maps", "AOC DOTA", "Vampire Recursion"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "role": "Commander",
     "badge": "badge-commander3.png",
     "specialties": ["CBA v21", "RPG", "AOC DOTA", "Tower Defence"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Female"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "role": "Commander",
     "badge": "badge-commander2.png",
     "specialties": ["CBA v21", "Hitler 1000 Pop", "AOC DOTA", "Tower Defence"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "role": "Veteran",
     "badge": "badge-veteran2.png",
     "specialties": ["RPG", "Wonder Defence ", "Worrier Defence"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "role": "Veteran",
     "badge": "badge-veteran.png",
     "specialties": ["CBA v21", "Nomad NR 50", "Random Arabia"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 9,
@@ -81,7 +87,8 @@
     "role": "Elite Member",
     "badge": "badge-elite2.png",
     "specialties": ["AOC DOTA"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 10,
@@ -93,7 +100,8 @@
     "role": "Elite Member",
     "badge": "badge-elite.png",
     "specialties": ["AOC DOTA", "CBA v21", "Nomad NR 50"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 11,
@@ -105,7 +113,8 @@
     "role": "Veteran",
     "badge": "FooWs-clans.png",
     "specialties": ["Nomad NR 50", "CBA v21", "Hitler 1000 Pop"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Female"
   },
   {
     "id": 7,
@@ -117,7 +126,8 @@
     "role": "Elite Member",
     "badge": "FooWs-clans.png",
     "specialties": ["CBA v21"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   },
   {
     "id": 8,
@@ -129,6 +139,7 @@
     "role": "Veteran",
     "badge": "FooWs-clans.png",
     "specialties": ["CBA v21", "CBA Heroes", "Hitler Maps"],
-    "status": "Active"
+    "status": "Active",
+    "identity": "Male"
   }
 ]
