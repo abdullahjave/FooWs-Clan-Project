@@ -79,9 +79,24 @@
     "status": "Active",
     "gender": "Male"
   },
+
+  {
+    "id": 13,
+    "displayOrder": 7,
+    "name": ">FooW<_GEOFIA™",
+    "country": "Uruguay",
+    "countryCode": "UY",
+    "gameRangerId": "7286667",
+    "role": "Elite Member",
+    "badge": "badge-elite3.png",
+    "specialties": ["AOC DOTA"],
+    "status": "Active",
+    "gender": "Male"
+  },
+
   {
     "id": 7,
-    "displayOrder": 7,
+    "displayOrder": 8,
     "name": ">FooW<Prohunter",
     "country": "Pakistan",
     "countryCode": "PK",
@@ -94,7 +109,7 @@
   },
   {
     "id": 8,
-    "displayOrder": 8,
+    "displayOrder": 9,
     "name": ">FooW<_MArvo",
     "country": "Brazil",
     "countryCode": "BR",
@@ -107,7 +122,7 @@
   },
   {
     "id": 9,
-    "displayOrder": 9,
+    "displayOrder": 10,
     "name": ">FooW<_akira Kurosawa",
     "country": "Argentina",
     "countryCode": "AR",
@@ -120,7 +135,7 @@
   },
   {
     "id": 10,
-    "displayOrder": 10,
+    "displayOrder": 11,
     "name": ">FooW<_ElvisChocho",
     "country": "Mexico",
     "countryCode": "MX",
@@ -133,7 +148,7 @@
   },
   {
     "id": 11,
-    "displayOrder": 11,
+    "displayOrder": 12,
     "name": ">FooW<_KING™",
     "country": "Spain",
     "countryCode": "ES",
@@ -146,7 +161,7 @@
   },
   {
     "id": 12,
-    "displayOrder": 12,
+    "displayOrder": 14,
     "name": ">FooW<_NL Pattadinh",
     "country": "Finland",
     "countryCode": "FI",
