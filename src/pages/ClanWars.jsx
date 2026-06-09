@@ -1,15 +1,57 @@
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Swords, Trophy, Users, Calendar, Map } from 'lucide-react';
+import clanWarsData from '../data/clanWars.json';
+import StatsBar from '../components/StatsBar';
+import SearchFilter from '../components/SearchFilter';
+import WarCard from '../components/WarCard';
 
 const ClanWars = () => {
-  const wars = [
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // ── Auto-sort battles by date (newest first) ──
+  const sortedWars = useMemo(() => {
+    return [...clanWarsData].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+  }, []);
+
+  // ── Filter & Search ──
+  const filteredWars = useMemo(() => {
+    let filtered = sortedWars;
+
+    // Apply result filter
+    if (activeFilter !== 'all') {
+      filtered = filtered.filter((w) => w.result === activeFilter);
+    }
+
+    // Apply search
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      filtered = filtered.filter((w) => {
+        const year = new Date(w.date).getFullYear().toString();
+        return (
+          w.opponentClan.toLowerCase().includes(query) ||
+          w.map.toLowerCase().includes(query) ||
+          year.includes(query)
+        );
+      });
+    }
+
+    return filtered;
+  }, [sortedWars, activeFilter, searchQuery]);
+
+  // ── Legacy war history data (existing content preserved) ──
+  const legacyWars = [
     {
       rival: 'Bad Boys Clan',
       period: '2000-2006',
       status: 'Legendary Rivalry',
       maps: ['Arabia', 'CBA Heroes', 'Hitler Maps', 'Blood Maps'],
       players: ['>FooW<_BaD_Ass_™', '>FooW<_Diblo™', '}-Hurricane !!! ™'],
-      description: 'Legendary competitive period that defined the early history of FooW Clan. These epic battles on GameRanger became the stuff of legend, with both clans pushing each other to new heights of strategic gameplay.',
+      description:
+        'Legendary competitive period that defined the early history of FooW Clan. These epic battles on GameRanger became the stuff of legend, with both clans pushing each other to new heights of strategic gameplay.',
       victories: '45+',
       memorable: true,
     },
@@ -19,7 +61,8 @@ const ClanWars = () => {
       status: 'Expansion Era',
       maps: ['Vampire Recursion', 'Tower Defence', 'CBA v21'],
       players: ['>FooW<_BaD_Ass_™', '>FooW<_Diblo™', '>FooW<_NØ_ØNE™'],
-      description: 'Period of rapid growth and dominance in custom map competitions. FooW established itself as the premier clan for innovative gameplay.',
+      description:
+        'Period of rapid growth and dominance in custom map competitions. FooW established itself as the premier clan for innovative gameplay.',
       victories: '30+',
       memorable: false,
     },
@@ -29,7 +72,8 @@ const ClanWars = () => {
       status: 'Golden Age',
       maps: ['CBA Heroes Turbo', 'RPG Kingdoms', 'Hitler 1000 Pop'],
       players: ['>FooW<_Diblo™', '>FooW<_NØ_ØNE™', ">FooW<_I'm Diana™"],
-      description: 'Peak competitive years with international members competing on Voobly. Multiple tournament victories and community recognition.',
+      description:
+        'Peak competitive years with international members competing on Voobly. Multiple tournament victories and community recognition.',
       victories: '25+',
       memorable: false,
     },
@@ -37,11 +81,12 @@ const ClanWars = () => {
 
   return (
     <div className="container mx-auto px-4 py-12">
+      {/* ── Header ── */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16"
+        className="text-center mb-12"
       >
         <h1 className="text-5xl md:text-6xl font-medieval font-bold text-accent-blue mb-4">
           Clan Wars
@@ -51,38 +96,65 @@ const ClanWars = () => {
         </p>
       </motion.div>
 
+      {/* ── Statistics Bar ── */}
+      <StatsBar wars={sortedWars} />
+
+      {/* ── Search & Filter ── */}
+      <SearchFilter
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+      />
+
+      {/* ── Battle Cards ── */}
+      <div className="space-y-6 mb-16">
+        {filteredWars.length > 0 ? (
+          filteredWars.map((war, index) => (
+            <WarCard key={war.id} war={war} index={index} />
+          ))
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="glass-card p-12 text-center"
+          >
+            <Swords className="w-12 h-12 text-accent-silver/30 mx-auto mb-4" />
+            <p className="text-lg text-accent-silver/50">
+              No battles found matching your search.
+            </p>
+            <button
+              onClick={() => {
+                setActiveFilter('all');
+                setSearchQuery('');
+              }}
+              className="mt-4 text-accent-blue hover:text-accent-blue/80 text-sm font-medium cursor-pointer"
+            >
+              Clear filters
+            </button>
+          </motion.div>
+        )}
+      </div>
+
+      {/* ── Legacy Battle History ── */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="glass-card p-8 mb-12 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-8"
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div>
-            <Trophy className="w-8 h-8 text-accent-gold mx-auto mb-2" />
-            <div className="text-3xl font-bold text-accent-gold mb-1">100+</div>
-            <div className="text-sm text-accent-silver/70">Total Wars</div>
-          </div>
-          <div>
-            <Swords className="w-8 h-8 text-accent-blue mx-auto mb-2" />
-            <div className="text-3xl font-bold text-accent-gold mb-1">6</div>
-            <div className="text-sm text-accent-silver/70">Major Rivals</div>
-          </div>
-          <div>
-            <Calendar className="w-8 h-8 text-accent-blue mx-auto mb-2" />
-            <div className="text-3xl font-bold text-accent-gold mb-1">25+</div>
-            <div className="text-sm text-accent-silver/70">Years Active</div>
-          </div>
-          <div>
-            <Map className="w-8 h-8 text-accent-gold mx-auto mb-2" />
-            <div className="text-3xl font-bold text-accent-gold mb-1">15+</div>
-            <div className="text-sm text-accent-silver/70">Battle Maps</div>
-          </div>
+        <div className="flex items-center gap-3 mb-8">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-accent-gold/30 to-transparent" />
+          <h2 className="text-2xl md:text-3xl font-medieval font-bold text-accent-gold whitespace-nowrap">
+            Legacy Battle History
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-accent-gold/30 to-transparent" />
         </div>
       </motion.div>
 
       <div className="space-y-8">
-        {wars.map((war, index) => (
+        {legacyWars.map((war, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -101,21 +173,27 @@ const ClanWars = () => {
                     <h2 className="text-2xl font-medieval font-bold text-accent-gold">
                       {war.rival}
                     </h2>
-                    <p className="text-sm text-accent-silver/70">{war.period}</p>
+                    <p className="text-sm text-accent-silver/70">
+                      {war.period}
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Trophy className="w-5 h-5 text-accent-gold" />
-                    <span className="text-accent-silver/80">{war.victories} Victories</span>
+                    <span className="text-accent-silver/80">
+                      {war.victories} Victories
+                    </span>
                   </div>
                   <div>
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-                      war.memorable 
-                        ? 'bg-gradient-to-r from-accent-gold to-yellow-600 text-white'
-                        : 'bg-accent-blue/20 text-accent-blue'
-                    }`}>
+                    <span
+                      className={`text-xs font-bold px-3 py-1 rounded-full ${
+                        war.memorable
+                          ? 'bg-gradient-to-r from-accent-gold to-yellow-600 text-white'
+                          : 'bg-accent-blue/20 text-accent-blue'
+                      }`}
+                    >
                       {war.status}
                     </span>
                   </div>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "war-005",
+    "date": "2026-06-06",
+    "time": "8:00 PM GMT",
+    "opponentClan": "PTG Clan",
+    "map": "AOK DOTA V 2.03",
+    "result": "victory",
+    "description": "A dominant performance by FooW Clan on the AOK DOTA V 2.03 map. Superior flanking strategies and coordinated unit pushes led to a decisive victory. PTG put up a strong defense in the early game but FooW's mid-game aggression proved unstoppable.",
+    "foowPlayers": [
+      ">FooW<_BaD_Ass_™",
+      ">FooW<_NØ_ØNE™",
+      "No FooW (Ro_Paul)"
+    ],
+    "opponentPlayers": [
+      "[P.T.G]_Ghanghish khan",
+      "[P.T.G]_El_CID",
+      "No PTG (Geofia)"
+    ],
+    "gameMode": "AOK DOTA V 2.03",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "screenshots": [],
+    "duration": "1:20 minutes",
+    "battleNotes": "Though fight we were lossing at start but with proper strategy we executed a perfect pincer attack in the final engagement and won. BaD_Ass leader did greate job by Attacking Directly"
+  },
+  {
+    "id": "war-004",
+    "date": "2026-05-20",
+    "time": "9:30 PM GMT",
+    "opponentClan": "Shadow Wolves",
+    "map": "Hitler 1000 Pop",
+    "result": "victory",
+    "description": "An intense high-population battle on the legendary Hitler 1000 Pop map. Shadow Wolves brought their best roster but FooW's superior macro management and resource control sealed the victory.",
+    "foowPlayers": [
+      ">FooW<_Diblo™",
+      ">FooW<_NØ_ØNE™",
+      ">FooW<_I'm Diana™"
+    ],
+    "opponentPlayers": [
+      "SW_Alpha",
+      "SW_Reaper",
+      "SW_Blaze"
+    ],
+    "gameMode": "Death Match",
+    "videoUrl": "",
+    "screenshots": [],
+    "duration": "1 hour 12 minutes",
+    "battleNotes": "Massive late-game battle with over 500 units clashing simultaneously. NØ_ØNE's siege coordination was the turning point."
+  },
+  {
+    "id": "war-003",
+    "date": "2026-04-15",
+    "time": "7:00 PM GMT",
+    "opponentClan": "Dark Knights",
+    "map": "Blood Maps",
+    "result": "defeat",
+    "description": "A hard-fought battle on Blood Maps that ultimately went to Dark Knights. FooW suffered from an early rush that disrupted the planned economy build. Despite a valiant comeback attempt, the damage was too severe to recover from.",
+    "foowPlayers": [
+      ">FooW<_BaD_Ass_™",
+      ">FooW<_I'm Diana™",
+      ">FooW<_Diblo™"
+    ],
+    "opponentPlayers": [
+      "DK_Warlord",
+      "DK_Phantom",
+      "DK_Crusher"
+    ],
+    "gameMode": "Random Map",
+    "videoUrl": "",
+    "screenshots": [],
+    "duration": "38 minutes",
+    "battleNotes": "Dark Knights executed a well-timed feudal rush. Lessons learned on early scouting and defense positioning. Rematch scheduled."
+  },
+  {
+    "id": "war-002",
+    "date": "2026-03-28",
+    "time": "6:00 PM GMT",
+    "opponentClan": "Iron Fist Gaming",
+    "map": "CBA Heroes Turbo",
+    "result": "draw",
+    "description": "An evenly matched showdown on CBA Heroes Turbo. Both clans traded blows throughout the entire game with neither side able to establish a decisive advantage. The match ended in a mutual agreement to draw after an extended stalemate.",
+    "foowPlayers": [
+      ">FooW<_NØ_ØNE™",
+      ">FooW<_BaD_Ass_™",
+      ">FooW<_Diblo™"
+    ],
+    "opponentPlayers": [
+      "IFG_Commander",
+      "IFG_Titan",
+      "IFG_Sniper"
+    ],
+    "gameMode": "CBA Heroes",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "screenshots": [],
+    "duration": "1 hour 30 minutes",
+    "battleNotes": "One of the longest matches in recent FooW history. Both clans showed incredible resilience. A rematch is highly anticipated by both sides."
+  },
+  {
+    "id": "war-001",
+    "date": "2026-02-14",
+    "time": "10:00 PM GMT",
+    "opponentClan": "Viper Squad",
+    "map": "Vampire Recursion",
+    "result": "victory",
+    "description": "FooW's expertise on Vampire Recursion was on full display. The team's deep knowledge of the custom map mechanics gave them a significant edge. Viper Squad struggled to adapt to the unique gameplay elements.",
+    "foowPlayers": [
+      ">FooW<_Diblo™",
+      ">FooW<_I'm Diana™",
+      ">FooW<_NØ_ØNE™"
+    ],
+    "opponentPlayers": [
+      "VS_Cobra",
+      "VS_Mamba",
+      "VS_Python"
+    ],
+    "gameMode": "Custom Scenario",
+    "videoUrl": "",
+    "screenshots": [],
+    "duration": "52 minutes",
+    "battleNotes": "Diblo's mastery of the vampire mechanics was the deciding factor. A clinic on how to play Vampire Recursion at the highest level."
+  }
+]
