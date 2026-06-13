@@ -17,6 +17,7 @@ const Navbar = () => {
     { name: 'Custom Maps', path: '/custom-maps' },
     { name: 'Download', path: '/download' },
     { name: 'Join Clan', path: '/join' },
+    { name: 'Leaders Panel', path: '/leaders-panel' },
   ];
 
   return (

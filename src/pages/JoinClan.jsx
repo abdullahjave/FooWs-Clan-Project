@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, User, Globe, Award, Map, MessageSquare, TrendingUp } from 'lucide-react';
+import { useMembers } from '../context/MembersContext';
 
 const JoinClan = () => {
+  const { addMember } = useMembers();
   const [formData, setFormData] = useState({
     playerName: '',
     country: '',
     gameRangerId: '',
+    gender: '',
     favoriteMaps: '',
     experienceLevel: '',
     message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -23,6 +27,15 @@ const JoinClan = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitError('');
+
+    // Validate and create join request via context
+    const result = addMember(formData);
+    if (!result?.success) {
+      setSubmitError(result?.error || 'Application could not be submitted.');
+      return;
+    }
+
     console.log('Application submitted:', formData);
     setSubmitted(true);
     setTimeout(() => {
@@ -31,7 +44,9 @@ const JoinClan = () => {
         playerName: '',
         country: '',
         gameRangerId: '',
+        gender: '',
         favoriteMaps: '',
+        experienceLevel: '',
         message: '',
       });
     }, 3000);
@@ -137,6 +152,12 @@ const JoinClan = () => {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {submitError && (
+                  <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
+                    {submitError} Warning: Applicant must be a {`>FooW<_`} member.
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-sm font-semibold text-accent-silver/80 mb-2">
                     <User className="inline-block w-4 h-4 mr-2" />
@@ -149,8 +170,29 @@ const JoinClan = () => {
                     onChange={handleChange}
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-accent-silver focus:outline-none focus:border-accent-blue transition-colors"
-                    placeholder="Enter your player name"
+                    placeholder="Enter your player name (must include >FooW<_)"
                   />
+                  <p className="text-xs text-accent-silver/60 mt-2">
+                    Required: player name must contain {`>FooW<_`} clan title.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-accent-silver/80 mb-2">
+                    <User className="inline-block w-4 h-4 mr-2" />
+                    Gender *
+                  </label>
+                  <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-accent-silver focus:outline-none focus:border-accent-blue transition-colors"
+                  >
+                    <option value="" className="bg-primary-800">Select your gender</option>
+                    <option value="Male" className="bg-primary-800">Male</option>
+                    <option value="Female" className="bg-primary-800">Female</option>
+                  </select>
                 </div>
 
                 <div>

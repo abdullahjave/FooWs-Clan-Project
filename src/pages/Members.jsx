@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Filter, Volume2, VolumeX, Play } from 'lucide-react';
-import membersData from '../data/members.json';
+import { useMembers } from '../context/MembersContext';
 
 const Members = () => {
+  const { allMembers } = useMembers();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('All');
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -86,14 +87,15 @@ const Members = () => {
       case 'Commander': return '#f75555';
       case 'Elite Member': return '#10B981';
       case 'Veteran': return '#F97316';
+      case 'Recruit': return '#A78BFA';
       default: return '#C0C7D4';
     }
   };
 
-  const countries = ['All', ...new Set(membersData.map(m => m.country))];
-  const totalCountries = new Set(membersData.map(m => m.country)).size;
+  const countries = ['All', ...new Set(allMembers.map(m => m.country))];
+  const totalCountries = new Set(allMembers.map(m => m.country)).size;
 
-  const filteredMembers = membersData
+  const filteredMembers = allMembers
     .filter(member => {
       const matchesSearch = member.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCountry = selectedCountry === 'All' || member.country === selectedCountry;
@@ -240,6 +242,12 @@ const Members = () => {
                     </div>
                     <p className="text-sm font-semibold mt-3" style={{ color: 'rgb(255, 255, 255)' }}>Gender:</p>
                     <p className="text-lg font-bold" style={{ color: 'var(--color-accent-gold)' }}>{member.gender}</p>
+                    {member.joinDate && (
+                      <div className="mt-2">
+                        <p className="text-sm font-semibold" style={{ color: 'rgb(255, 255, 255)' }}>JOINED:</p>
+                        <p className="text-sm" style={{ color: 'var(--color-accent-gold)' }}>{member.joinDate}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
 

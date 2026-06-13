@@ -37,6 +37,22 @@ const Footer = () => {
           <p className="text-sm" style={{ color: 'rgba(192, 199, 212, 0.4)' }}>
             © {new Date().getFullYear()} FooW Clan. All rights reserved.
           </p>
+          <div
+            className="px-5 py-3 rounded-xl border-2 text-center"
+            style={{
+              borderColor: 'rgba(212, 175, 55, 0.55)',
+              background: 'rgba(212, 175, 55, 0.12)',
+              boxShadow: '0 0 25px rgba(212, 175, 55, 0.18)',
+            }}
+          >
+            <p className="text-xs uppercase tracking-wider font-semibold" style={{ color: 'rgba(192, 199, 212, 0.9)' }}>
+              Website Credits
+            </p>
+            <p className="text-lg md:text-xl font-bold" style={{ fontFamily: 'Cinzel, serif' }}>
+              <span style={{ color: '#FFFFFF' }}>Credit goes to </span>
+              <span style={{ color: 'var(--color-accent-gold)' }}>&gt;FooW&lt;_N&Oslash;_&Oslash;NE&trade;</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
