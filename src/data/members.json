@@ -214,5 +214,24 @@
     ],
     "status": "Active",
     "gender": "Male"
+  },
+
+
+ {
+    "id": 12,
+    "displayOrder": 14,
+    "name": ">FooW<_Danger_Zone",
+    "country": "EGYPT",
+    "countryCode": "EG",
+    "gameRangerId": "134961766",
+    "role": "Veteran",
+    "badge": "FooWs-clans.png",
+    "specialties": [
+      "CBA v21",
+      "Tower Defence Pro"
+        
+    ],
+    "status": "Active",
+    "gender": "Male"
   }
 ]
